@@ -1,12 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Physics with Prabhakaran</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>V. Prabhakaran Physics</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- NAVBAR -->
+  <nav class="flex justify-between items-center px-6 py-4 shadow-md sticky top-0 bg-white z-50">
+    <h1 class="font-bold text-lg">V. Prabhakaran</h1>
+    <div class="flex gap-3">
+      <button onclick="openDemo()" class="bg-orange-500 text-white px-4 py-2 rounded-lg">Book Demo</button>
+      <button onclick="openWhatsApp()" class="bg-green-500 text-white px-4 py-2 rounded-lg">WhatsApp</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="min-h-screen flex flex-col items-center justify-center text-center px-6">
+    <img src="https://res.cloudinary.com/dw28oh9ih/image/upload/v1777126490/copy_of_wcdwxxagx5rmy0cwjf282t98sw_rwfa79_c5dd25.png"
+      class="w-[120px] h-[120px] rounded-full border-4 border-orange-500 mb-4"/>
+
+    <h1 class="text-4xl font-bold mb-2">V. Prabhakaran</h1>
+    <p class="text-orange-500 mb-2">Physics Educator | NEET & JEE Mentor</p>
+    <p class="text-gray-600 mb-6">7+ Years Experience | 1000+ Students Mentored</p>
+
+    <div class="flex gap-4">
+      <button onclick="openDemo()" class="bg-orange-500 text-white px-6 py-3 rounded-xl">Book Free Demo</button>
+      <button onclick="openWhatsApp()" class="bg-green-500 text-white px-6 py-3 rounded-xl">Chat on WhatsApp</button>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="py-16 px-6 bg-orange-50 text-center">
+    <h2 class="text-2xl font-bold mb-6">Student Results</h2>
+    <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-xl font-bold text-orange-500">NEET</h3>
+        <p>Top Score: 650+</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-xl font-bold text-orange-500">JEE Main</h3>
+        <p>Top Rankers Produced</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-xl font-bold text-orange-500">Success Rate</h3>
+        <p>90% Students Improved</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES -->
+  <section class="py-16 px-6 bg-gray-50 text-center">
+    <h2 class="text-2xl font-bold mb-8">Courses Offered</h2>
+    <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <div class="p-6 bg-white shadow rounded-xl">
+        <h3 class="font-bold text-lg mb-2">NEET Physics</h3>
+        <p>Complete syllabus + mock tests</p>
+      </div>
+      <div class="p-6 bg-white shadow rounded-xl">
+        <h3 class="font-bold text-lg mb-2">JEE Coaching</h3>
+        <p>Advanced problems & rank strategy</p>
+      </div>
+      <div class="p-6 bg-white shadow rounded-xl">
+        <h3 class="font-bold text-lg mb-2">Crash Course</h3>
+        <p>Quick revision & scoring tricks</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-16 px-6 text-center">
+    <h2 class="text-2xl font-bold mb-8">Student Feedback</h2>
+    <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <div class="p-6 bg-gray-100 rounded-xl">"Improved my marks drastically!"</div>
+      <div class="p-6 bg-gray-100 rounded-xl">"Best Physics mentor!"</div>
+      <div class="p-6 bg-gray-100 rounded-xl">"Concept clarity amazing"</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 text-center bg-orange-50">
+    <h2 class="text-2xl font-bold mb-4">Limited Seats Available</h2>
+    <p class="text-gray-600 mb-6">Book your free demo now</p>
+    <button onclick="openDemo()" class="bg-orange-500 text-white px-8 py-3 rounded-xl">Book Free Demo</button>
+  </section>
+
+  <!-- FLOATING WHATSAPP -->
+  <button onclick="openWhatsApp()"
+    class="fixed bottom-5 right-5 bg-green-500 text-white px-5 py-3 rounded-full shadow-lg">
+    WhatsApp
+  </button>
+
+  <!-- POPUP -->
+  <div id="popup" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center">
+    <div class="bg-white p-6 rounded-xl text-center">
+      <h2 class="text-xl font-bold mb-3">Get Free Demo Class</h2>
+      <p class="mb-4">Limited seats available. Register now!</p>
+      <button onclick="openDemo()" class="bg-orange-500 text-white px-6 py-2 rounded-lg">Book Now</button>
+      <br/><br/>
+      <button onclick="closePopup()">Close</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="text-center py-6 text-gray-500">
+    © 2026 V. Prabhakaran. All rights reserved.
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    function openDemo() {
+      window.open("https://forms.zohopublic.in/jonesrjs2004gm1/form/Requestacallback/formperma/vH9x9EKQHUjJCBhFdYTqSDwRYQtKqPl0k11pcOHc7mY", "_blank");
+    }
+
+    function openWhatsApp() {
+      window.open("https://wa.me/919585347191?text=Hello%20Sir%2C%20I%20want%20to%20join%20your%20Physics%20class", "_blank");
+    }
+
+    function closePopup() {
+      document.getElementById("popup").classList.add("hidden");
+    }
+
+    // Auto popup after 5 sec
+    setTimeout(() => {
+      document.getElementById("popup").classList.remove("hidden");
+    }, 5000);
+  </script>
+
+</body>
 </html>
